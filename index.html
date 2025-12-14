@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>안흥유원지 수목조사표 · THE FORIM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo-mark">THE FORIM</div>
+    <div class="brand-text">
+      <h1>안흥유원지 수목조사표</h1>
+      <p>공간별 · 개체별 수목 현황과 QR 연동 정보를 관리합니다.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav style="margin: 1rem 0 1.5rem; font-size: 0.9rem;">
+      <a href="/">← 메인으로 돌아가기</a>
+    </nav>
+
+    <section class="card">
+      <h2 style="margin-top: 0;">기본 정보</h2>
+      <p style="margin-bottom: 0.8rem; font-size: 0.95rem;">
+        공원명: <strong>안흥유원지</strong><br />
+        조사일: <span>YYYY-MM-DD</span><br />
+        조사자: <span>더포림</span>
+      </p>
+    </section>
+
+    <section class="card" style="margin-top: 1.5rem; overflow-x: auto;">
+      <h2 style="margin-top: 0;">수목 목록</h2>
+      <p style="font-size: 0.9rem; color: #555;">
+        ※ 조사번호를 클릭하면 개별 수목 상세 페이지로 이동합니다.<br />
+        ※ DT = 낙엽교목, ET = 상록교목 분류 코드입니다.
+      </p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem;">
+        <thead>
+          <tr style="background: #f0f5f1;">
+            <th style="padding: 0.5rem; border-bottom: 1px solid #dde6dd;">조사번호</th>
+            <th style="padding: 0.5rem; border-bottom: 1px solid #dde6dd;">수종</th>
+            <th style="padding: 0.5rem; border-bottom: 1px solid #dde6dd;">수고(m)</th>
+            <th style="padding: 0.5rem; border-bottom: 1px solid #dde6dd;">흉고직경(cm)</th>
+            <th style="padding: 0.5rem; border-bottom: 1px solid #dde6dd;">수관폭(m)</th>
+            <th style="padding: 0.5rem; border-bottom: 1px solid #dde6dd;">생육상태</th>
+            <th style="padding: 0.5rem; border-bottom: 1px solid #dde6dd;">세부 위치</th>
+            <th style="padding: 0.5rem; border-bottom: 1px solid #dde6dd;">QR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 예시 행 (실제 데이터로 계속 추가) -->
+          <tr>
+            <td style="padding: 0.45rem; border-bottom: 1px solid #ecf0ec;">
+              <a href="./trees/DT0001.html" style="color: #2f6c4f; font-weight: 600;">DT0001</a>
+            </td>
+            <td style="padding: 0.45rem; border-bottom: 1px solid #ecf0ec;">가죽나무</td>
+            <td style="padding: 0.45rem; border-bottom: 1px solid #ecf0ec; text-align: right;">8.0</td>
+            <td style="padding: 0.45rem; border-bottom: 1px solid #ecf0ec; text-align: right;">30</td>
+            <td style="padding: 0.45rem; border-bottom: 1px solid #ecf0ec; text-align: right;">6.0</td>
+            <td style="padding: 0.45rem; border-bottom: 1px solid #ecf0ec;">양호</td>
+            <td style="padding: 0.45rem; border-bottom: 1px solid #ecf0ec;">
+              주차장 입구 좌측 광장 가장자리
+            </td>
+            <td style="padding: 0.45rem; border-bottom: 1px solid #ecf0ec; text-align: center;">
+              <a href="/qr/DT0001.png" target="_blank">QR보기</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 0.8rem; font-size: 0.85rem; color: #666;">
+        ※ 목록은 필요에 따라 계속 추가/수정할 수 있습니다.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>? THE FORIM · 안흥유원지 수목조사</small>
+  </footer>
+</body>
+</html>
