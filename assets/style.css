@@ -23,6 +23,25 @@ a {
   margin: 0 auto;
   padding: 1.5rem;
 }
+/* ================================
+   조사 기록 버튼 (안흥유원지 스타일)
+   ================================ */
+.btn-old-record {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #4CAF50;   /* 안흥유원지 초록 */
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 8px;          /* 알약 느낌 */
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-old-record:hover {
+  background-color: #43a047;
+}
 
 /* 헤더 */
 
