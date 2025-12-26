@@ -13,8 +13,7 @@ ENTRY_CODE = "253022448"    # 수목코드 entry  (네 Network 캡처 기준)
 PARK_NAME = "복하천 제2수변공원"
 
 # ✅ 대상 trees 폴더
-TREES_DIR = os.path.join("parks", "복하천제2수변공원", "trees")
-
+TREES_DIR = TREES_DIR = os.path.join("parks", "bokha2", "trees")
 # 파일명에서 수목코드 추출(복하천 코드: B2-XXXXXXX 형태)
 CODE_RE = re.compile(r"\b(B2-[A-Z0-9]{5,})\b", re.IGNORECASE)
 
