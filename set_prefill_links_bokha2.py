@@ -5,15 +5,16 @@ from urllib.parse import quote
 # === 설정(복하천용) ===
 FORM_BASE = "https://docs.google.com/forms/d/e/1FAIpQLSdgujOIV9bKAUyOAot7AoysT4UWBrrIKkQbIgWirDtZjaapQA/viewform"
 
-# ✅ 여기 entry 번호는 '폼' 기준으로 고정
-ENTRY_PARK = "939121262"    # 공원명 entry
-ENTRY_CODE = "253022448"    # 수목코드 entry  (네 Network 캡처 기준)
+# ✅ 여기 entry 번호는 '폼' 기준으로 고정 (바뀌면 안 됨)
+ENTRY_PARK = "939121262"   # 공원명 entry 
+ENTRY_CODE = "253024248"   # 수목코드 entry
 
-# ✅ 공원명(표시용)
+# ✅ 공원만 바꾼다
 PARK_NAME = "복하천 제2수변공원"
 
 # ✅ 대상 trees 폴더
-TREES_DIR = TREES_DIR = os.path.join("parks", "bokha2", "trees")
+TREES_DIR = os.path.join("parks", "복하천제2수변공원", "trees")
+
 # 파일명에서 수목코드 추출(복하천 코드: B2-XXXXXXX 형태)
 CODE_RE = re.compile(r"\b(B2-[A-Z0-9]{5,})\b", re.IGNORECASE)
 
@@ -23,7 +24,6 @@ def build_prefill_url(tree_code: str) -> str:
     return f"{FORM_BASE}?usp=pp_url&entry.{ENTRY_PARK}={park_q}&entry.{ENTRY_CODE}={code_q}"
 
 def main():
-    print("✅ set_prefill_links_bokha2.py 실행 시작")
     if not os.path.isdir(TREES_DIR):
         raise SystemExit(f"[ERROR] TREES 폴더를 찾을 수 없습니다: {TREES_DIR}")
 

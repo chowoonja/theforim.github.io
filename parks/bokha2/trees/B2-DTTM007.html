@@ -53,7 +53,7 @@
         현장에서 생육 상태와 필요 관리 내용을 기록하려면 아래 버튼을 눌러주세요.
       </p>
 <!-- 기존 고정 링크 대신, JS로 폼 URL을 생성하도록 버튼에 id 부여 -->
-<a class="btn-old-record" href="https://docs.google.com/forms/d/e/1FAIpQLSdgujOIV9bKAUyOAot7AoysT4UWBrrIKkQbIgWirDtZjaapQA/viewform?usp=pp_url&entry.939121262=%EB%B3%B5%ED%95%98%EC%B2%9C%20%EC%A0%9C2%EC%88%98%EB%B3%80%EA%B3%B5%EC%9B%90&entry.253022448=B2-DTTM007" id="openFormBtn" style="
+<a class="btn-old-record" href="https://docs.google.com/forms/d/e/1FAIpQLSdgujOIV9bKAUyOAot7AoysT4UWBrrIKkQbIgWirDtZjaapQA/viewform?usp=pp_url&entry.1291403664=%EB%B3%B5%ED%95%98%EC%B2%9C%20%EC%A0%9C2%EC%88%98%EB%B3%80%EA%B3%B5%EC%9B%90&entry.1870322508=B2-DTTM007" id="openFormBtn" style="
           display: inline-block;
           padding: 0.7rem 1.4rem;
           border-radius: 6px;
@@ -82,10 +82,10 @@
 <p style="font-size: 0.9rem; color: #555;">
         아래 QR 코드는 이 페이지로 연결됩니다. 현장 표찰에 인쇄하여 부착하세요.
       </p>
-<img alt="DT0001 QR 코드" src="/qr/DT0001.png" style="width: 150px; height: 150px; object-fit: contain; background:#fff; border-radius:0.6rem; border:1px solid #dde3dd;"/>
+<img alt="B2-DTTM007 QR 코드" src="/qr/B2-DTTM007.png" style="width: 150px; height: 150px; object-fit: contain; background:#fff; border-radius:0.6rem; border:1px solid #dde3dd;"/>
 <p style="font-size:0.85rem; color:#666;">
         파일 위치: <code>/qr/B2-DTTM007.png</code><br/>
-        페이지 URL: <code>https://theforim.com/trees/B2-DTTM007.html</code>
+        페이지 URL: <code>https://theforim.com/parks/bokha2/trees/B2-DTTM007.html</code>
 </p>
 </section>
 <section class="card" style="margin-top:1.5rem;">
@@ -102,7 +102,7 @@
 </footer>
 <!-- ===== 조사 정보 localStorage 저장/불러오기 스크립트 ===== -->
 <script>
-    const file = location.pathname.split("/").pop().split(".")[0]; // DT0001 → DT코드 추출
+    const file = location.pathname.split("/").pop().split(".")[0]; // 파일명에서 수목 코드 추출
     const KEY_PARK = `park-${file}`;
     const KEY_INV  = `inv-${file}`;
     const KEY_DATE = `date-${file}`;
@@ -142,7 +142,7 @@
       if (!document.getElementById("parkName").value) { document.getElementById("parkName").value = "복하천 제2수변공원"; }
 
       // ① 구글폼 기본 URL
-      const FORM_BASE_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdgujOIV9bKAUyOAot7AoysT4UWBrrIKkQbIgWirDtZjaapQA/viewform';
+      const FORM_BASE_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdgujOIV9bKAUyOAot7AoysT4UWBrrIKkQbIgWirDtZjaapQA/viewform?usp=pp_url';
 
       // ② 각 질문에 해당하는 entry 코드
       const ENTRY_PARK_NAME   = 'entry.1291403664';  // 공원명
@@ -172,7 +172,7 @@
         params.set(ENTRY_SURVEY_DATE, surveyDate);
         params.set(ENTRY_TREE_CODE,   treeCode);
 
-        const finalUrl = FORM_BASE_URL + '?' + params.toString();
+        const finalUrl = FORM_BASE_URL + '&' + params.toString();
         window.open(finalUrl, '_blank');
       });
     });
