@@ -11,7 +11,7 @@
 <!-- ======= 조사 정보 입력 영역 ======= -->
 <div style="border:1px solid #ddd; padding:12px; margin-bottom:16px; background:#f9f9f9; border-radius:6px;">
 <label><b>📍 공원명:</b></label>
-<input id="parkName" placeholder="예) 안흥유원지" style="width:200px; margin:6px;" type="text"/><br/>
+<input id="parkName" type="text" value="복하천 제2수변공원" readonly style="width:200px; margin:6px; background:#fff; border:1px solid #ddd; border-radius:6px;"/><br/>
 <label><b>👤 조사자명:</b></label>
 <!-- id를 surveyorName 으로 통일 -->
 <input id="surveyorName" placeholder="예) 가드너" style="width:200px; margin:6px;" type="text"/><br/>
@@ -32,7 +32,7 @@
 <main class="container">
 <nav style="margin: 1rem 0 1.5rem; font-size: 0.9rem;">
 <a href="/">메인</a> ·
-      <a href="/parks/복하천제2수변공원/">복하천제2수변공원 수목조사표</a>
+      <a href="/parks/bokha2/">복하천제2수변공원 수목조사표</a>
 </nav>
 <section class="card">
 <h2 style="margin-top: 0;">기본 정보</h2>
@@ -53,7 +53,7 @@
         현장에서 생육 상태와 필요 관리 내용을 기록하려면 아래 버튼을 눌러주세요.
       </p>
 <!-- 기존 고정 링크 대신, JS로 폼 URL을 생성하도록 버튼에 id 부여 -->
-<a class="btn-old-record" href="https://docs.google.com/forms/d/e/1FAIpQLSdgujOIV9bKAUyOAot7AoysT4UWBrrIKkQbIgWirDtZjaapQA/viewform?usp=pp_url&amp;entry.1291403664=%EB%B3%B5%ED%95%98%EC%B2%9C+%EC%A0%9C2%EC%88%98%EB%B3%80%EA%B3%B5%EC%9B%90&amp;entry.1870322508=B2-DTGT001" id="openFormBtn" style="
+<a class="btn-old-record" href="https://docs.google.com/forms/d/e/1FAIpQLSdgujOIV9bKAUyOAot7AoysT4UWBrrIKkQbIgWirDtZjaapQA/viewform?usp=pp_url&entry.1291403664=%EB%B3%B5%ED%95%98%EC%B2%9C%20%EC%A0%9C2%EC%88%98%EB%B3%80%EA%B3%B5%EC%9B%90&entry.1870322508=B2-DTGT001" id="openFormBtn" style="
           display: inline-block;
           padding: 0.7rem 1.4rem;
           border-radius: 6px;
@@ -82,10 +82,10 @@
 <p style="font-size: 0.9rem; color: #555;">
         아래 QR 코드는 이 페이지로 연결됩니다. 현장 표찰에 인쇄하여 부착하세요.
       </p>
-<img alt="DT0001 QR 코드" src="/qr/DT0001.png" style="width: 150px; height: 150px; object-fit: contain; background:#fff; border-radius:0.6rem; border:1px solid #dde3dd;"/>
+<img alt="B2-DTGT001 QR 코드" src="/qr/B2-DTGT001.png" style="width: 150px; height: 150px; object-fit: contain; background:#fff; border-radius:0.6rem; border:1px solid #dde3dd;"/>
 <p style="font-size:0.85rem; color:#666;">
         파일 위치: <code>/qr/B2-DTGT001.png</code><br/>
-        페이지 URL: <code>https://theforim.com/trees/B2-DTGT001.html</code>
+        페이지 URL: <code>https://theforim.com/parks/bokha2/trees/B2-DTGT001.html</code>
 </p>
 </section>
 <section class="card" style="margin-top:1.5rem;">
@@ -102,20 +102,20 @@
 </footer>
 <!-- ===== 조사 정보 localStorage 저장/불러오기 스크립트 ===== -->
 <script>
-    const file = location.pathname.split("/").pop().split(".")[0]; // DT0001 → DT코드 추출
+    const file = location.pathname.split("/").pop().split(".")[0]; // 파일명에서 수목 코드 추출
     const KEY_PARK = `park-${file}`;
     const KEY_INV  = `inv-${file}`;
     const KEY_DATE = `date-${file}`;
 
     function saveHeaderInfo() {
-      localStorage.setItem(KEY_PARK, document.getElementById("parkName").value);
+      localStorage.setItem(KEY_PARK, "복하천 제2수변공원");
       localStorage.setItem(KEY_INV,  document.getElementById("surveyorName").value);
       localStorage.setItem(KEY_DATE, document.getElementById("surveyDate").value);
       alert("저장 완료 ✔");
     }
 
     function loadHeaderInfo() {
-      document.getElementById("parkName").value     = localStorage.getItem(KEY_PARK) || "";
+      document.getElementById("parkName").value = "복하천 제2수변공원";
       document.getElementById("surveyorName").value = localStorage.getItem(KEY_INV)  || "";
       document.getElementById("surveyDate").value   = localStorage.getItem(KEY_DATE) || "";
     }
@@ -126,6 +126,9 @@
         localStorage.removeItem(KEY_INV);
         localStorage.removeItem(KEY_DATE);
         loadHeaderInfo();
+      // parkNameDefaultInjected
+      if (!document.getElementById("parkName").value) { document.getElementById("parkName").value = "복하천 제2수변공원"; }
+      if (!document.getElementById("parkName").value) { document.getElementById("parkName").value = "복하천 제2수변공원"; }
       }
     }
   </script>
@@ -134,9 +137,12 @@
     window.addEventListener('DOMContentLoaded', function () {
       // 페이지 열릴 때 localStorage 값 불러오기
       loadHeaderInfo();
+      // parkNameDefaultInjected
+      if (!document.getElementById("parkName").value) { document.getElementById("parkName").value = "복하천 제2수변공원"; }
+      if (!document.getElementById("parkName").value) { document.getElementById("parkName").value = "복하천 제2수변공원"; }
 
       // ① 구글폼 기본 URL
-      const FORM_BASE_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdgujOIV9bKAUyOAot7AoysT4UWBrrIKkQbIgWirDtZjaapQA/viewform';
+      const FORM_BASE_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdgujOIV9bKAUyOAot7AoysT4UWBrrIKkQbIgWirDtZjaapQA/viewform?usp=pp_url';
 
       // ② 각 질문에 해당하는 entry 코드
       const ENTRY_PARK_NAME   = 'entry.1291403664';  // 공원명
@@ -166,7 +172,7 @@
         params.set(ENTRY_SURVEY_DATE, surveyDate);
         params.set(ENTRY_TREE_CODE,   treeCode);
 
-        const finalUrl = FORM_BASE_URL + '?' + params.toString();
+        const finalUrl = FORM_BASE_URL + '&' + params.toString();
         window.open(finalUrl, '_blank');
       });
     });
