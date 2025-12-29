@@ -1,0 +1,227 @@
+/* THE FORIM – unified style (modern + nature-friendly)
+   Drop-in replacement for /assets/style.css
+   Works with existing DT templates (cards, header, buttons, tables).
+*/
+
+:root{
+  --bg: #0b0f12;
+  --surface: #ffffff;
+  --muted: #f5f7f8;
+  --text: #111827;
+  --subtext:#4b5563;
+  --line: #e5e7eb;
+
+  --brand: #0f766e;        /* teal */
+  --brand-2:#16a34a;       /* green accent */
+  --brand-dark:#0b5f59;
+
+  --shadow: 0 14px 45px rgba(0,0,0,.12);
+  --shadow-sm: 0 8px 24px rgba(0,0,0,.10);
+  --radius: 18px;
+  --radius-sm: 12px;
+
+  --font: system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans KR",Arial,sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(22,163,74,.18), transparent 55%),
+    radial-gradient(1000px 700px at 90% 0%, rgba(15,118,110,.20), transparent 60%),
+    linear-gradient(180deg, #0b0f12 0%, #10161b 35%, #f2f6f7 35%, #f2f6f7 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Layout */
+.container{
+  width:min(980px, calc(100% - 40px));
+  margin: 28px auto 64px;
+}
+@media (max-width: 520px){
+  .container{width:calc(100% - 24px); margin:18px auto 48px;}
+}
+
+/* Header */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background: linear-gradient(90deg, rgba(0,0,0,.75), rgba(0,0,0,.55));
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding: 18px 0;
+}
+.site-header .container{
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.logo-mark{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(15,118,110,.95), rgba(22,163,74,.90));
+  color:#fff;
+  font-weight:800;
+  letter-spacing:.5px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+  user-select:none;
+}
+.brand-text h1{
+  margin:0;
+  font-size: 20px;
+  color:#fff;
+  letter-spacing:.2px;
+}
+.brand-text p{
+  margin:4px 0 0;
+  color: rgba(255,255,255,.70);
+  font-size: 13px;
+}
+
+/* Links / nav */
+a{color:var(--brand); text-decoration:none}
+a:hover{text-decoration:underline}
+nav a{color:rgba(255,255,255,.85)}
+nav a:hover{color:#fff; text-decoration:none}
+
+/* Card */
+.card{
+  background: var(--surface);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px 24px;
+}
+@media (max-width: 520px){
+  .card{padding:18px 16px; border-radius: 16px;}
+}
+
+.card h2, .card h3{
+  margin:0 0 12px;
+  letter-spacing:.2px;
+}
+
+hr{
+  border:0;
+  border-top:1px solid var(--line);
+  margin:16px 0;
+}
+
+/* “Definition table” style used in DT pages */
+.table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  overflow:hidden;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.table th, .table td{
+  padding: 12px 14px;
+  border-bottom:1px solid var(--line);
+  vertical-align:top;
+  font-size: 14px;
+}
+.table th{
+  width: 140px;
+  color: var(--subtext);
+  font-weight:700;
+  background: linear-gradient(180deg, #fafafa, #f7faf9);
+}
+.table tr:last-child th, .table tr:last-child td{border-bottom:0;}
+@media (max-width: 520px){
+  .table th{width:110px}
+  .table th, .table td{padding:10px 12px; font-size:13px}
+}
+
+/* Buttons */
+.button, button, .btn{
+  appearance:none;
+  border:0;
+  border-radius: 14px;
+  padding: 11px 14px;
+  font-weight:800;
+  letter-spacing:.2px;
+  cursor:pointer;
+  transition: transform .06s ease, box-shadow .15s ease, background .15s ease, opacity .15s ease;
+}
+.button:active, button:active, .btn:active{transform: translateY(1px);}
+
+.btn-primary, .btn-record, .btn-blue{
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color:#fff;
+  box-shadow: 0 10px 25px rgba(15,118,110,.22);
+}
+.btn-primary:hover, .btn-record:hover, .btn-blue:hover{opacity:.96; box-shadow: 0 14px 30px rgba(15,118,110,.26);}
+
+.btn-secondary, .btn-dark{
+  background:#111827;
+  color:#fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,.20);
+}
+.btn-secondary:hover, .btn-dark:hover{opacity:.95; box-shadow: 0 14px 30px rgba(0,0,0,.25);}
+
+.btn-ghost{
+  background: rgba(15,118,110,.10);
+  color: var(--brand-dark);
+  border: 1px solid rgba(15,118,110,.25);
+}
+.btn-ghost:hover{background: rgba(15,118,110,.14);}
+
+/* Button group in DT cards */
+.actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
+
+/* Text blocks */
+.note{
+  margin-top:10px;
+  color: var(--subtext);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.section-title{
+  margin:16px 0 8px;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing:.2px;
+}
+.muted{color:var(--subtext)}
+
+/* Inputs (if any) */
+input, select, textarea{
+  font: inherit;
+  border:1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline:none;
+  width:100%;
+  background:#fff;
+}
+input:focus, select:focus, textarea:focus{
+  border-color: rgba(15,118,110,.55);
+  box-shadow: 0 0 0 4px rgba(15,118,110,.14);
+}
+
+/* Print */
+@media print{
+  body{background:#fff}
+  .site-header{position:relative; background:#fff; color:#000; border-bottom:1px solid #ddd}
+  .brand-text h1{color:#000}
+  nav a{color:#000}
+  .card{box-shadow:none; border:1px solid #ddd}
+}
