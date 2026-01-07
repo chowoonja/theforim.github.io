@@ -13,12 +13,9 @@
   var code = path.split("/").pop();
 
   if (!code || code === "t") {
-    location.replace("https://chowoonja.github.io/");
-    return;
-  }
+  location.replace("https://theforim.github.io/");
+  var target = "https://theforim.github.io/trees/" + encodeURIComponent(code) + ".html";
 
-  var target = "https://chowoonja.github.io/trees/" + encodeURIComponent(code) + ".html";
-  location.replace(target);
 })();
 </script>
 
