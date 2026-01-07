@@ -8,3 +8,9 @@ _backup/
 make_tree_pages.py
 DT0001_backup.html
 lindex_broken_20251219.html
+# ===== QR / 인쇄 산출물 제외 =====
+QR인쇄용/
+qr/
+
+*.zip
+*.pdf
