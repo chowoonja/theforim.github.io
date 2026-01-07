@@ -6,22 +6,21 @@
   <title>Redirecting…</title>
   <meta name="robots" content="noindex" />
 </head>
-
 <body>
 <script>
 (function () {
-  // 예: /t/O2-DTMD004  →  O2-DTMD004
+  // /t/O2-DTMD004  →  code = "O2-DTMD004"
   var path = location.pathname.replace(/\/+$/, "");
   var parts = path.split("/");
   var code = parts[parts.length - 1];
 
-  // 코드가 없거나 /t 로만 접근했을 때
+  // /t 또는 /t/ 로 들어오면 메인으로
   if (!code || code === "t") {
     location.replace("/");
     return;
   }
 
-  // 정상 코드 → trees 페이지로 이동 (상대경로!)
+  // 현재 도메인 유지 + trees로 이동
   var target = "/trees/" + encodeURIComponent(code) + ".html";
   location.replace(target);
 })();
