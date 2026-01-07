@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
-  <title>DT0001 · 안흥유원지 · THE FORIM</title>
+  <title>DT0001 쨌 ?덊씎?좎썝吏 쨌 THE FORIM</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/assets/style.css" />
 <script>
@@ -17,12 +17,12 @@
   }
   const parkName = getParkNameFromPath();
 
-  // ✅ 1) 팝업 유발 초안 키를 "가장 먼저" 제거
+  // ??1) ?앹뾽 ?좊컻 珥덉븞 ?ㅻ? "媛??癒쇱?" ?쒓굅
   try {
     localStorage.removeItem("draft_" + treeCode);
     localStorage.removeItem("draft_" + parkName + "_" + treeCode);
 
-    // 혹시 키 이름이 달라도 잡히게: DT코드/공원명이 포함된 키는 제거
+    // ?뱀떆 ???대쫫???щ씪???≫엳寃? DT肄붾뱶/怨듭썝紐낆씠 ?ы븿???ㅻ뒗 ?쒓굅
     Object.keys(localStorage).forEach(k => {
       if (k.includes(treeCode) || (parkName && k.includes(parkName))) {
         localStorage.removeItem(k);
@@ -30,7 +30,7 @@
     });
   } catch (e) {}
 
-  // ✅ 2) 자동채움/링크갱신은 DOM 로드 후 실행
+  // ??2) ?먮룞梨꾩?/留곹겕媛깆떊? DOM 濡쒕뱶 ???ㅽ뻾
   function fill() {
     const parkEl = document.querySelector("#parkName");
     const codeEl = document.querySelector("#treeCode");
@@ -57,11 +57,11 @@
 <body>
 
   <div style="border:1px solid #ddd; padding:12px; margin-bottom:16px; background:#f9f9f9; border-radius:6px;">
-    <label><b>📍 공원명:</b></label>
-    <input id="parkName" placeholder="안흥유원지" style="width:200px; margin:6px;" type="text"/><br/>
-    <label><b>👤 조사자명:</b></label>
-    <input id="surveyorName" placeholder="예) 가드너" style="width:200px; margin:6px;" type="text"/><br/>
-    <label><b>🗓 조사일자:</b></label>
+    <label><b>?뱧 怨듭썝紐?</b></label>
+    <input id="parkName" placeholder="?덊씎?좎썝吏" style="width:200px; margin:6px;" type="text"/><br/>
+    <label><b>?뫀 議곗궗?먮챸:</b></label>
+    <input id="surveyorName" placeholder="?? 媛?쒕꼫" style="width:200px; margin:6px;" type="text"/><br/>
+    <label><b>?뿎 議곗궗?쇱옄:</b></label>
     <input id="surveyDate" style="margin:6px;" type="date"/><br/><br/>
     <input id="treeCode" type="hidden" value=""/>
   </div>
@@ -69,20 +69,20 @@
   <header class="site-header">
     <div class="logo-mark">THE FORIM</div>
     <div class="brand-text">
-      <h1>수목 상세 정보</h1>
-      <p>조사번호: DT0001 · 안흥유원지</p>
+      <h1>?섎ぉ ?곸꽭 ?뺣낫</h1>
+      <p>議곗궗踰덊샇: DT0001 쨌 ?덊씎?좎썝吏</p>
     </div>
   </header>
 
   <main class="container">
     <section class="card">
-      <h2>기본 정보</h2>
+      <h2>湲곕낯 ?뺣낫</h2>
       <dl>
-        <dt>조사번호</dt><dd>DT0001</dd>
-        <dt>관리번호</dt><dd>안흥낙교가-1</dd>
-        <dt>성상</dt><dd>낙엽교목</dd>
-        <dt>수종명</dt><dd>가죽나무</dd>
-        <dt>규격</dt><dd>H10.0*B25</dd>
+        <dt>議곗궗踰덊샇</dt><dd>DT0001</dd>
+        <dt>愿由щ쾲??/dt><dd>?덊씎?숆탳媛-1</dd>
+        <dt>?깆긽</dt><dd>?숈뿽援먮ぉ</dd>
+        <dt>?섏쥌紐?/dt><dd>媛二쎈굹臾?/dd>
+        <dt>洹쒓꺽</dt><dd>H10.0*B25</dd>
       </dl>
     </section>
 
@@ -91,9 +91,10 @@
          href="https://docs.google.com/forms/d/e/1FAIpQLSdgujOIV9bKAUyOAot7AoysT4UWBrrIKkQbIgWirDtZjaapQA/viewform?usp=pp_url&entry.939121262=%EC%95%88%ED%9D%A5%EC%9C%A0%EC%9B%90%EC%A7%80&entry.253024248=DT0001"
          target="_blank"
          style="display:inline-block;padding:0.7rem 1.4rem;border-radius:6px;background:#4caf50;color:#fff;text-decoration:none;">
-        조사 기록
-      </a> · </section>
+        議곗궗 湲곕줉
+      </a> 쨌 </section>
   </main>
 
 </body>
 </html>
+

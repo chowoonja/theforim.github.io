@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SH-DTZT054 · 느티나무 · 서희테마파크 · THE FORIM</title>
+  <title>SH-DTZT054 쨌 ?먰떚?섎Т 쨌 ?쒗씗?뚮쭏?뚰겕 쨌 THE FORIM</title>
   <style>
     body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; color:#111; }
     .topbar { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; padding:10px 12px; border:1px solid #ddd; border-radius:10px; }
@@ -30,57 +30,57 @@
 </head>
 <body>
   <div class="topbar">
-    <label>📍 공원명: <input id="parkName" type="text" value="서희테마파크" /></label>
-    <label>👤 조사자명: <input id="surveyor" type="text" placeholder="예: 조운자" /></label>
-    <label>🗓 조사일자: <input id="surveyDate" type="date" /></label>
+    <label>?뱧 怨듭썝紐? <input id="parkName" type="text" value="?쒗씗?뚮쭏?뚰겕" /></label>
+    <label>?뫀 議곗궗?먮챸: <input id="surveyor" type="text" placeholder="?? 議곗슫?? /></label>
+    <label>?뿎 議곗궗?쇱옄: <input id="surveyDate" type="date" /></label>
     <div style="flex:1 1 auto;"></div>
-    <div class="muted">이 페이지의 수목 코드 (SH-DTZT054)</div>
-    <button class="btn" id="saveBtn">💾 저장</button>
-    <button class="btn danger" id="deleteBtn">🗑 삭제</button>
+    <div class="muted">???섏씠吏???섎ぉ 肄붾뱶 (SH-DTZT054)</div>
+    <button class="btn" id="saveBtn">?뮶 ???/button>
+    <button class="btn danger" id="deleteBtn">?뿊 ??젣</button>
   </div>
 
   <div style="margin-top: 28px;">THE FORIM</div>
-  <h1>수목 상세 정보</h1>
-  <div class="muted">조사번호: SH-DTZT054 · 서희테마파크</div>
+  <h1>?섎ぉ ?곸꽭 ?뺣낫</h1>
+  <div class="muted">議곗궗踰덊샇: SH-DTZT054 쨌 ?쒗씗?뚮쭏?뚰겕</div>
   <p style="margin: 14px 0 24px;">
-    <a href="/parks/seohee_themepark/">메인</a> ·
-    <a href="/parks/seohee_themepark/">서희테마파크 수목조사표</a>
+    <a href="/parks/seohee_themepark/">硫붿씤</a> 쨌
+    <a href="/parks/seohee_themepark/">?쒗씗?뚮쭏?뚰겕 ?섎ぉ議곗궗??/a>
   </p>
 
   <div class="section">
-    <h2>기본 정보</h2>
+    <h2>湲곕낯 ?뺣낫</h2>
     <div class="info-grid">
-      <div>조사번호</div><div>SH-DTZT054</div>
-      <div>관리번호</div><div>서희낙교느티54</div>
-      <div>성상</div><div>낙엽교목</div>
-      <div>수종명</div><div>느티나무</div>
-      <div>규격</div><div>H5.0*B25</div>
-      <div>단위</div><div>주</div>
-      <div>수량(설계)</div><div>1.0</div>
-      <div>수량(현장)</div><div></div>
+      <div>議곗궗踰덊샇</div><div>SH-DTZT054</div>
+      <div>愿由щ쾲??/div><div>?쒗씗?숆탳?먰떚54</div>
+      <div>?깆긽</div><div>?숈뿽援먮ぉ</div>
+      <div>?섏쥌紐?/div><div>?먰떚?섎Т</div>
+      <div>洹쒓꺽</div><div>H5.0*B25</div>
+      <div>?⑥쐞</div><div>二?/div>
+      <div>?섎웾(?ㅺ퀎)</div><div>1.0</div>
+      <div>?섎웾(?꾩옣)</div><div></div>
     </div>
 
-    <h2>조사기록</h2>
-    <p class="muted">현장에서 생육 상태와 필요 관리 내용을 기록하려면 아래 버튼을 눌러주세요.</p>
-    <button class="green" id="openRecord">조사기록</button>
+    <h2>議곗궗湲곕줉</h2>
+    <p class="muted">?꾩옣?먯꽌 ?앹쑁 ?곹깭? ?꾩슂 愿由??댁슜??湲곕줉?섎젮硫??꾨옒 踰꾪듉???뚮윭二쇱꽭??</p>
+    <button class="green" id="openRecord">議곗궗湲곕줉</button>
     <p id="saveStatus" class="small"></p>
 
     <div id="recordArea" style="display:none; margin-top:14px;" class="record-box">
       <div class="record-grid">
-        <div>활력도</div><div><input id="r_vigor" type="text" /></div>
-        <div>수형</div><div><input id="r_shape" type="text" /></div>
-        <div>고사지유무</div><div><input id="r_dead" type="text" /></div>
-        <div>기울기</div><div><input id="r_lean" type="text" /></div>
-        <div>병해충유무</div><div><input id="r_pest" type="text" /></div>
-        <div>지주상태</div><div><input id="r_stake" type="text" /></div>
-        <div>토양상태</div><div><input id="r_soil" type="text" /></div>
-        <div>필요관리내용</div><div><textarea id="r_need" rows="3"></textarea></div>
+        <div>?쒕젰??/div><div><input id="r_vigor" type="text" /></div>
+        <div>?섑삎</div><div><input id="r_shape" type="text" /></div>
+        <div>怨좎궗吏?좊Т</div><div><input id="r_dead" type="text" /></div>
+        <div>湲곗슱湲?/div><div><input id="r_lean" type="text" /></div>
+        <div>蹂묓빐異⑹쑀臾?/div><div><input id="r_pest" type="text" /></div>
+        <div>吏二쇱긽??/div><div><input id="r_stake" type="text" /></div>
+        <div>?좎뼇?곹깭</div><div><input id="r_soil" type="text" /></div>
+        <div>?꾩슂愿由щ궡??/div><div><textarea id="r_need" rows="3"></textarea></div>
       </div>
       <div style="display:flex; gap:10px; margin-top:12px;">
-        <button class="btn primary" id="saveRecord">기록 저장</button>
-        <button class="btn" id="closeRecord">닫기</button>
+        <button class="btn primary" id="saveRecord">湲곕줉 ???/button>
+        <button class="btn" id="closeRecord">?リ린</button>
       </div>
-      <div class="small muted" style="margin-top:8px;">※ 이 기록은 브라우저 저장소(LocalStorage)에 저장됩니다.</div>
+      <div class="small muted" style="margin-top:8px;">????湲곕줉? 釉뚮씪?곗? ??μ냼(LocalStorage)????λ맗?덈떎.</div>
     </div>
   </div>
 
@@ -153,12 +153,12 @@
 
   document.getElementById("saveBtn").addEventListener("click", () => {
     saveMeta();
-    setStatus("저장되었습니다.");
+    setStatus("??λ릺?덉뒿?덈떎.");
   });
   document.getElementById("deleteBtn").addEventListener("click", () => {
-    if (confirm("이 수목의 저장된 조사기록을 삭제할까요?")) {
+    if (confirm("???섎ぉ????λ맂 議곗궗湲곕줉????젣?좉퉴??")) {
       localStorage.removeItem(keyRecord);
-      setStatus("삭제되었습니다.");
+      setStatus("??젣?섏뿀?듬땲??");
     }
   });
 
@@ -172,7 +172,7 @@
   document.getElementById("saveRecord").addEventListener("click", () => {
     saveMeta();
     saveRecordFromUI();
-    setStatus("조사기록이 저장되었습니다.");
+    setStatus("議곗궗湲곕줉????λ릺?덉뒿?덈떎.");
   });
 })();
 </script>

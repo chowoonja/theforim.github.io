@@ -1,65 +1,65 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>DT0001 · 가죽나무 · 안흥유원지 · THE FORIM</title>
+  <title>DT0001 쨌 媛二쎈굹臾?쨌 ?덊씎?좎썝吏 쨌 THE FORIM</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
-  <!-- ======= 조사 정보 입력 영역 ======= -->
+  <!-- ======= 議곗궗 ?뺣낫 ?낅젰 ?곸뿭 ======= -->
   <div style="border:1px solid #ddd; padding:12px; margin-bottom:16px; background:#f9f9f9; border-radius:6px;">
-    <label><b>📍 공원명:</b></label>
-    <input type="text" id="parkName" placeholder="예) 안흥유원지" style="width:200px; margin:6px;"><br>
+    <label><b>?뱧 怨듭썝紐?</b></label>
+    <input type="text" id="parkName" placeholder="?? ?덊씎?좎썝吏" style="width:200px; margin:6px;"><br>
 
-    <label><b>👤 조사자명:</b></label>
-    <!-- id를 surveyorName 으로 통일 -->
-    <input type="text" id="surveyorName" placeholder="예) 가드너" style="width:200px; margin:6px;"><br>
+    <label><b>?뫀 議곗궗?먮챸:</b></label>
+    <!-- id瑜?surveyorName ?쇰줈 ?듭씪 -->
+    <input type="text" id="surveyorName" placeholder="?? 媛?쒕꼫" style="width:200px; margin:6px;"><br>
 
-    <label><b>🗓 조사일자:</b></label>
+    <label><b>?뿎 議곗궗?쇱옄:</b></label>
     <input type="date" id="surveyDate" style="margin:6px;"><br><br>
 
-    <!-- 이 페이지의 수목 코드 (DT0001) -->
+    <!-- ???섏씠吏???섎ぉ 肄붾뱶 (DT0001) -->
     <input type="hidden" id="treeCode" value="DT0001">
 
-    <button onclick="saveHeaderInfo()">💾 저장</button>
-    <button onclick="clearHeaderInfo()" style="margin-left:10px;">🗑 삭제</button>
+    <button onclick="saveHeaderInfo()">?뮶 ???/button>
+    <button onclick="clearHeaderInfo()" style="margin-left:10px;">?뿊 ??젣</button>
   </div>
 
   <header class="site-header">
     <div class="logo-mark">THE FORIM</div>
     <div class="brand-text">
-      <h1>수목 상세 정보</h1>
-      <p>조사번호: DT0001 · 안흥유원지</p>
+      <h1>?섎ぉ ?곸꽭 ?뺣낫</h1>
+      <p>議곗궗踰덊샇: DT0001 쨌 ?덊씎?좎썝吏</p>
     </div>
   </header>
 
   <main class="container">
     <nav style="margin: 1rem 0 1.5rem; font-size: 0.9rem;">
-      <a href="/">메인</a> ·
-      <a href="/parks/안흥유원지/">안흥유원지 수목조사표</a>
+      <a href="/">硫붿씤</a> 쨌
+      <a href="/parks/?덊씎?좎썝吏/">?덊씎?좎썝吏 ?섎ぉ議곗궗??/a>
     </nav>
 
     <section class="card">
-      <h2 style="margin-top: 0;">기본 정보</h2>
+      <h2 style="margin-top: 0;">湲곕낯 ?뺣낫</h2>
       <dl style="display: grid; grid-template-columns: 120px 1fr; row-gap: 0.35rem; margin: 0;">
-        <dt>조사번호</dt><dd>DT0001</dd>
-        <dt>관리번호</dt><dd>안흥낙교가-1</dd>
-        <dt>성상</dt><dd>상록교목</dd>
-        <dt>수종명</dt><dd>가죽나무</dd>
-        <dt>규격</dt><dd>H10.0*B25</dd>
-        <dt>단위</dt><dd></dd>
-        <dt>수량(설계)</dt><dd>1.0</dd>
-        <dt>수량(현장)</dt><dd></dd>
+        <dt>議곗궗踰덊샇</dt><dd>DT0001</dd>
+        <dt>愿由щ쾲??/dt><dd>?덊씎?숆탳媛-1</dd>
+        <dt>?깆긽</dt><dd>?곷줉援먮ぉ</dd>
+        <dt>?섏쥌紐?/dt><dd>媛二쎈굹臾?/dd>
+        <dt>洹쒓꺽</dt><dd>H10.0*B25</dd>
+        <dt>?⑥쐞</dt><dd></dd>
+        <dt>?섎웾(?ㅺ퀎)</dt><dd>1.0</dd>
+        <dt>?섎웾(?꾩옣)</dt><dd></dd>
       </dl>
     </section>
 
     <section class="card" style="margin-top: 1.5rem;">
-      <h2 style="margin-top: 0;">현장 기록 입력</h2>
+      <h2 style="margin-top: 0;">?꾩옣 湲곕줉 ?낅젰</h2>
       <p style="margin-bottom: 0.8rem;">
-        현장에서 생육 상태와 필요 관리 내용을 기록하려면 아래 버튼을 눌러주세요.
+        ?꾩옣?먯꽌 ?앹쑁 ?곹깭? ?꾩슂 愿由??댁슜??湲곕줉?섎젮硫??꾨옒 踰꾪듉???뚮윭二쇱꽭??
       </p>
-      <!-- 기존 고정 링크 대신, JS로 폼 URL을 생성하도록 버튼에 id 부여 -->
+      <!-- 湲곗〈 怨좎젙 留곹겕 ??? JS濡???URL???앹꽦?섎룄濡?踰꾪듉??id 遺??-->
       <a
         href="#"
         id="openFormBtn"
@@ -74,57 +74,57 @@
           font-size: 0.95rem;
         "
       >
-        📋 수목 생육·관리 기록 입력
+        ?뱥 ?섎ぉ ?앹쑁쨌愿由?湲곕줉 ?낅젰
       </a>
     </section>
 
     <section class="card" style="margin-top: 1.5rem;">
-      <h2 style="margin-top: 0;">생육 및 관리 상태</h2>
+      <h2 style="margin-top: 0;">?앹쑁 諛?愿由??곹깭</h2>
       <dl style="display: grid; grid-template-columns: 120px 1fr; row-gap: 0.35rem; margin: 0;">
-        <dt>활력도</dt><dd></dd>
-        <dt>수형</dt><dd></dd>
-        <dt>고사지 유무</dt><dd></dd>
-        <dt>기울기</dt><dd></dd>
-        <dt>병해충 유무</dt><dd></dd>
-        <dt>지주 상태</dt><dd></dd>
-        <dt>토양 상태</dt><dd></dd>
-        <dt>필요 관리 내용</dt><dd></dd>
+        <dt>?쒕젰??/dt><dd></dd>
+        <dt>?섑삎</dt><dd></dd>
+        <dt>怨좎궗吏 ?좊Т</dt><dd></dd>
+        <dt>湲곗슱湲?/dt><dd></dd>
+        <dt>蹂묓빐異??좊Т</dt><dd></dd>
+        <dt>吏二??곹깭</dt><dd></dd>
+        <dt>?좎뼇 ?곹깭</dt><dd></dd>
+        <dt>?꾩슂 愿由??댁슜</dt><dd></dd>
       </dl>
     </section>
 
     <section class="card" style="margin-top: 1.5rem;">
-      <h2 style="margin-top: 0;">QR 코드</h2>
+      <h2 style="margin-top: 0;">QR 肄붾뱶</h2>
       <p style="font-size: 0.9rem; color: #555;">
-        아래 QR 코드는 이 페이지로 연결됩니다. 현장 표찰에 인쇄하여 부착하세요.
+        ?꾨옒 QR 肄붾뱶?????섏씠吏濡??곌껐?⑸땲?? ?꾩옣 ?쒖같???몄뇙?섏뿬 遺李⑺븯?몄슂.
       </p>
       <img
         src="/qr/DT0001.png"
-        alt="DT0001 QR 코드"
+        alt="DT0001 QR 肄붾뱶"
         style="width: 150px; height: 150px; object-fit: contain; background:#fff; border-radius:0.6rem; border:1px solid #dde3dd;"
       />
       <p style="font-size:0.85rem; color:#666;">
-        파일 위치: <code>/qr/DT0001.png</code><br/>
-        페이지 URL: <code>https://theforim.com/trees/DT0001.html</code>
+        ?뚯씪 ?꾩튂: <code>/qr/DT0001.png</code><br/>
+        ?섏씠吏 URL: <code>https://theforim.com/trees/DT0001.html</code>
       </p>
     </section>
 
     <section class="card" style="margin-top:1.5rem;">
-      <h2 style="margin-top:0;">사진 및 기록</h2>
+      <h2 style="margin-top:0;">?ъ쭊 諛?湲곕줉</h2>
       <p style="font-size:0.9rem; color:#555;">
-        시공 전·중·후 사진은 공용 폴더에 저장하고,
-        파일명에 <strong>DT0001</strong>를 포함해 주세요.<br/>
-        예: DT0001_before.jpg, DT0001_after.jpg
+        ?쒓났 ?꽷룹쨷쨌???ъ쭊? 怨듭슜 ?대뜑????ν븯怨?
+        ?뚯씪紐낆뿉 <strong>DT0001</strong>瑜??ы븿??二쇱꽭??<br/>
+        ?? DT0001_before.jpg, DT0001_after.jpg
       </p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <small>© THE FORIM · Tree ID: DT0001</small>
+    <small>짤 THE FORIM 쨌 Tree ID: DT0001</small>
   </footer>
 
-  <!-- ===== 조사 정보 localStorage 저장/불러오기 스크립트 ===== -->
+  <!-- ===== 議곗궗 ?뺣낫 localStorage ???遺덈윭?ㅺ린 ?ㅽ겕由쏀듃 ===== -->
   <script>
-    const file = location.pathname.split("/").pop().split(".")[0]; // DT0001 → DT코드 추출
+    const file = location.pathname.split("/").pop().split(".")[0]; // DT0001 ??DT肄붾뱶 異붿텧
     const KEY_PARK = `park-${file}`;
     const KEY_INV  = `inv-${file}`;
     const KEY_DATE = `date-${file}`;
@@ -133,7 +133,7 @@
       localStorage.setItem(KEY_PARK, document.getElementById("parkName").value);
       localStorage.setItem(KEY_INV,  document.getElementById("surveyorName").value);
       localStorage.setItem(KEY_DATE, document.getElementById("surveyDate").value);
-      alert("저장 완료 ✔");
+      alert("????꾨즺 ??);
     }
 
     function loadHeaderInfo() {
@@ -143,7 +143,7 @@
     }
 
     function clearHeaderInfo() {
-      if (confirm("삭제할까요?")) {
+      if (confirm("??젣?좉퉴??")) {
         localStorage.removeItem(KEY_PARK);
         localStorage.removeItem(KEY_INV);
         localStorage.removeItem(KEY_DATE);
@@ -152,26 +152,25 @@
     }
   </script>
 
-  <!-- ===== 구글폼 자동 채우기 & 열기 스크립트 ===== -->
+  <!-- ===== 援ш????먮룞 梨꾩슦湲?& ?닿린 ?ㅽ겕由쏀듃 ===== -->
   <script>
     window.addEventListener('DOMContentLoaded', function () {
-      // 페이지 열릴 때 localStorage 값 불러오기
+      // ?섏씠吏 ?대┫ ??localStorage 媛?遺덈윭?ㅺ린
       loadHeaderInfo();
 
-      // ① 구글폼 기본 URL
+      // ??援ш???湲곕낯 URL
       const FORM_BASE_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdgujOIV9bKAUyOAot7AoysT4UWBrrIKkQbIgWirDtZjaapQA/viewform';
 
-      // ② 각 질문에 해당하는 entry 코드
-      const ENTRY_PARK_NAME   = 'entry.1291403664';  // 공원명
-      const ENTRY_SURVEYOR    = 'entry.2066724387';  // 조사자명
-      const ENTRY_SURVEY_DATE = 'entry.2016295766';  // 조사일자
-      const ENTRY_TREE_CODE   = 'entry.1870322508';  // 관리번호(수목코드)
+      // ??媛?吏덈Ц???대떦?섎뒗 entry 肄붾뱶
+      const ENTRY_PARK_NAME   = 'entry.1291403664';  // 怨듭썝紐?      const ENTRY_SURVEYOR    = 'entry.2066724387';  // 議곗궗?먮챸
+      const ENTRY_SURVEY_DATE = 'entry.2016295766';  // 議곗궗?쇱옄
+      const ENTRY_TREE_CODE   = 'entry.1870322508';  // 愿由щ쾲???섎ぉ肄붾뱶)
 
       const btn = document.getElementById('openFormBtn');
       if (!btn) return;
 
       btn.addEventListener('click', function (e) {
-        e.preventDefault(); // 기존 링크 이동 막기
+        e.preventDefault(); // 湲곗〈 留곹겕 ?대룞 留됯린
 
         const parkName   = document.getElementById('parkName').value.trim();
         const surveyor   = document.getElementById('surveyorName').value.trim();
@@ -179,7 +178,7 @@
         const treeCode   = document.getElementById('treeCode').value;
 
         if (!parkName || !surveyor || !surveyDate) {
-          alert('공원명, 조사자명, 조사일자를 먼저 입력해 주세요.');
+          alert('怨듭썝紐? 議곗궗?먮챸, 議곗궗?쇱옄瑜?癒쇱? ?낅젰??二쇱꽭??');
           return;
         }
 
@@ -196,3 +195,4 @@
   </script>
 </body>
 </html>
+
