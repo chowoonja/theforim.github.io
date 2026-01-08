@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SH-DTOT023 · 기타교목 · 서희테마파크 · THE FORIM</title>
+  <title>SH-DTOT023 쨌 湲고?援먮ぉ 쨌 ?쒗씗?뚮쭏?뚰겕 쨌 THE FORIM</title>
   <link rel="stylesheet" href="/assets/style.css" />
   <style>
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; margin:0; background:#f6f7f9; color:#111;}
@@ -27,38 +27,38 @@
   <header class="site-header">
     <div class="logo-mark">THE FORIM</div>
     <div class="brand-text">
-      <h1>수목 상세 정보</h1>
-      <p>조사번호: SH-DTOT023 · 서희테마파크</p>
+      <h1>?섎ぉ ?곸꽭 ?뺣낫</h1>
+      <p>議곗궗踰덊샇: SH-DTOT023 쨌 ?쒗씗?뚮쭏?뚰겕</p>
     </div>
   </header>
 
   <main class="container">
     <section class="card">
       <div class="grid">
-        <div class="row"><div class="k">공원명</div><div class="v">서희테마파크</div></div>
-        <div class="row"><div class="k">수목코드</div><div class="v">SH-DTOT023</div></div>
-        <div class="row"><div class="k">수종명</div><div class="v">기타교목</div></div>
-        <div class="row"><div class="k">성상</div><div class="v">낙엽교목</div></div>
-        <div class="row"><div class="k">규격</div><div class="v">H3.0*B12</div></div>
-        <div class="row"><div class="k">단위</div><div class="v">주</div></div>
-        <div class="row"><div class="k">수량(설계)</div><div class="v">1</div></div>
-        <div class="row"><div class="k">수량(현장)</div><div class="v"></div></div>
-        <div class="row"><div class="k">관리번호</div><div class="v">서희낙교기타23</div></div>
-        <div class="row"><div class="k">사진ID</div><div class="v">서희낙교기타23</div></div>
+        <div class="row"><div class="k">怨듭썝紐?/div><div class="v">?쒗씗?뚮쭏?뚰겕</div></div>
+        <div class="row"><div class="k">?섎ぉ肄붾뱶</div><div class="v">SH-DTOT023</div></div>
+        <div class="row"><div class="k">?섏쥌紐?/div><div class="v">湲고?援먮ぉ</div></div>
+        <div class="row"><div class="k">?깆긽</div><div class="v">?숈뿽援먮ぉ</div></div>
+        <div class="row"><div class="k">洹쒓꺽</div><div class="v">H3.0*B12</div></div>
+        <div class="row"><div class="k">?⑥쐞</div><div class="v">二?/div></div>
+        <div class="row"><div class="k">?섎웾(?ㅺ퀎)</div><div class="v">1</div></div>
+        <div class="row"><div class="k">?섎웾(?꾩옣)</div><div class="v"></div></div>
+        <div class="row"><div class="k">愿由щ쾲??/div><div class="v">?쒗씗?숆탳湲고?23</div></div>
+        <div class="row"><div class="k">?ъ쭊ID</div><div class="v">?쒗씗?숆탳湲고?23</div></div>
       </div>
 
       <hr style="border:0;border-top:1px solid #eee;margin:14px 0;" />
 
       <div class="row" style="align-items:center;">
-        <a class="btn" id="recordBtn" href="#" rel="noopener">현장기록 입력</a>
+        <a class="btn" id="recordBtn" href="#" rel="noopener">?꾩옣湲곕줉 ?낅젰</a>
         <a class="btn secondary" href="/qr/SH-DTOT023.png" download>QR PNG</a>
       </div>
       <p class="muted" style="margin-top:10px;">
-        ※ 버튼을 누르면 Google Form이 열리고, 공원명/수목코드가 자동 입력됩니다.
+        ??踰꾪듉???꾨Ⅴ硫?Google Form???대━怨? 怨듭썝紐??섎ぉ肄붾뱶媛 ?먮룞 ?낅젰?⑸땲??
       </p>
 
       <div style="margin-top:14px;">
-        <div class="k" style="margin-bottom:6px;">필요 관리 내용</div>
+        <div class="k" style="margin-bottom:6px;">?꾩슂 愿由??댁슜</div>
         <div class="v" style="white-space:pre-wrap;"></div>
       </div>
     </section>
@@ -72,7 +72,7 @@
     const ENTRY_SURVEYOR = "entry.2066724387";
     const ENTRY_SURVEY_DATE = "entry.2016295766";
 
-    const parkName = "서희테마파크";
+    const parkName = "?쒗씗?뚮쭏?뚰겕";
     const treeCode = "SH-DTOT023";
 
     function toYMD(d) {
@@ -86,7 +86,7 @@
       const url = new URL(FORM_BASE_URL);
       url.searchParams.set(ENTRY_PARK_NAME, parkName);
       url.searchParams.set(ENTRY_TREE_CODE, treeCode);
-      // surveyor/date는 사용자가 폼에서 입력해도 되지만, 날짜는 기본값으로 넣어둠
+      // surveyor/date???ъ슜?먭? ?쇱뿉???낅젰?대룄 ?섏?留? ?좎쭨??湲곕낯媛믪쑝濡??ｌ뼱??
       url.searchParams.set(ENTRY_SURVEY_DATE, toYMD(new Date()));
       return url.toString();
     }
@@ -95,3 +95,4 @@
   </script>
 </body>
 </html>
+
