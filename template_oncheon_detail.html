@@ -1,0 +1,117 @@
+      <div class="sub">조사번호: <span id="codeTop"></span> · <span id="parkTop"></span></div>
+    </div>
+
+    <div class="card">
+      <table class="meta">
+        <tr>
+          <th>공원명</th><td id="park"></td>
+          <th>수목코드</th><td id="code"></td>
+        </tr>
+        <tr>
+          <th>수종명</th><td id="species"></td>
+          <th>성상</th><td id="type"></td>
+        </tr>
+        <tr>
+          <th>규격</th><td id="spec"></td>
+          <th>단위</th><td id="unit"></td>
+        </tr>
+        <tr>
+          <th>수량(설계)</th><td id="qtyPlan"></td>
+          <th>수량(현장)</th><td id="qtyField"></td>
+        </tr>
+        <tr>
+          <th>관리번호</th><td id="manageNo"></td>
+          <th>사진ID</th><td id="photoId"></td>
+        </tr>
+      </table>
+
+      <div class="btnrow">
+        <button class="btn" id="goForm">현장기록 입력</button>
+        <a class="btn secondary" id="qrPng" href="#" target="_blank" rel="noopener">QR PNG</a>
+      </div>
+
+      <div class="hint">※ 버튼을 누르면 Google Form이 열리고, 공원명/수목코드/수종명이 자동 입력됩니다.</div>
+
+      <div class="section-title">필요 관리 내용</div>
+      <div class="note" id="need"></div>
+    </div>
+  </div>
+
+  <script>
+    // ===== 고정(온천공원 폼) =====
+    // ✅ 너가 준 "미리 채워진 링크"에서 뽑은 정답 BASE
+    const FORM_BASE  = "https://docs.google.com/forms/d/e/1FAIpQLSdgujOIV9bKAUyOAot7AoysT4UWBrrIKkQbIgWirDtZjaapQA/viewform";
+    const ENTRY_PARK = "entry.939121262";
+    const ENTRY_CODE = "entry.253024248";
+    const ENTRY_SPECIES = "entry.2104235715";
+
+    // ===== 페이지 데이터(엑셀에서 주입될 영역) =====
+    const DATA = {
+      park: "온천공원",
+      code: "",
+
+      // ✅ 테스트: 여기 값이 폼에 안 들어오면, URL 생성/배포/폼질문타입 중 하나가 문제
+      species: "TESTSPECIES",
+
+      type: "",
+      spec: "",
+      unit: "",
+      qtyPlan: "",
+      qtyField: "",
+      manageNo: "",
+      photoId: "",
+      need: ""
+    };
+
+    // ===== 유틸 =====
+    const clean = (v) => {
+      if (v === null || v === undefined) return "";
+      const s = String(v).trim();
+      if (s.toLowerCase() === "nan") return "";
+      return s;
+    };
+
+    // ===== 코드(파일명) =====
+    const fileCode = location.pathname.split("/").pop().replace(".html","");
+    const code = clean(DATA.code) || fileCode;
+
+    // ===== 바인딩 =====
+    const park = clean(DATA.park) || "온천공원";
+
+    document.getElementById("pageTitle").textContent = `${code} · ${park} · THE FORIM`;
+    document.getElementById("codeTop").textContent = code;
+    document.getElementById("parkTop").textContent = park;
+
+    document.getElementById("park").textContent     = park;
+    document.getElementById("code").textContent     = code;
+    document.getElementById("species").textContent  = clean(DATA.species);
+    document.getElementById("type").textContent     = clean(DATA.type);
+    document.getElementById("spec").textContent     = clean(DATA.spec);
+    document.getElementById("unit").textContent     = clean(DATA.unit);
+    document.getElementById("qtyPlan").textContent  = clean(DATA.qtyPlan);
+    document.getElementById("qtyField").textContent = clean(DATA.qtyField);
+    document.getElementById("manageNo").textContent = clean(DATA.manageNo);
+    document.getElementById("photoId").textContent  = clean(DATA.photoId);
+    document.getElementById("need").textContent     = clean(DATA.need);
+
+    // ===== QR PNG 링크 =====
+    document.getElementById("qrPng").href = `/qr/${encodeURIComponent(code)}.png`;
+
+    // ===== 폼 이동 (공원명 + 수목코드 + 수종명 자동 입력) =====
+    document.getElementById("goForm").onclick = () => {
+      const species = clean(DATA.species);
+
+      const url =
+        `${FORM_BASE}?usp=pp_url` +
+        `&${ENTRY_PARK}=${encodeURIComponent(park)}` +
+        `&${ENTRY_CODE}=${encodeURIComponent(code)}` +
+        `&${ENTRY_SPECIES}=${encodeURIComponent(species)}`;
+
+      // ✅ 진단 모드: 실제 이동 URL을 눈으로 확인
+      alert(url);
+
+      window.location.href = url;
+    };
+  </script>
+</body>
+</html>

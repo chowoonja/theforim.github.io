@@ -1,0 +1,104 @@
+목적
+
+QR 1개 = 수목 1주
+
+QR → HTML → Google Form → 조사데이터 기록
+
+절대 원칙
+
+파일명 = 수목코드
+
+QR 내용은 URL만 (데이터 없음)
+
+실제 서비스 HTML 위치는 /trees
+
+생성 순서
+① 조사 엑셀 준비
+
+파일 예: Oncheon_MASTER_trees.xlsx
+
+필수 컬럼: 수목코드
+
+② HTML 자동 생성
+python build_oncheon_pages.py
+
+
+결과
+
+trees/수목코드.html 자동 생성
+
+③ 배포
+git add trees/*.html
+git commit -m "Generate tree pages"
+git push
+
+④ QR 생성 기준
+
+QR 내용:
+
+https://theforim.com/trees/수목코드.html
+
+
+QR은 재생성할 필요 없음
+(HTML만 바뀌면 QR도 자동 반영)
+
+2️⃣ 수목조사용 QR 카드형 상세페이지 작성방법
+목적
+
+조사 후 관리·보고용 상세페이지
+
+복하천 스타일 카드형 표 구성
+
+구조 원칙
+
+엑셀 컬럼 = 화면 표시 항목
+
+값 없는 항목은 공백 처리
+
+QR/폼 동작에는 영향 없음
+
+구성 항목(표준)
+
+공원명
+
+수목코드
+
+수종명
+
+성상
+
+규격
+
+단위
+
+수량(설계)
+
+수량(현장)
+
+관리번호
+
+사진ID
+
+필요 관리 내용
+
+작성 순서
+① 카드 템플릿 작성 (1회)
+
+파일: template_oncheon_detail.html
+
+위치: 레포 루트
+
+② 카드형 생성기 작성 (1회)
+
+파일: build_oncheon_pages_card.py
+
+③ 카드형으로 전체 재생성
+python build_oncheon_pages_card.py
+
+④ 로컬 확인
+Select-String -Path .\trees\임의의코드.html -Pattern "hero|card|table.meta"
+
+⑤ 배포
+git add trees/*.html
+git commit -m "Switch to card detail pages"
+git push
