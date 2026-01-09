@@ -6,27 +6,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>O2-DTZT038 · 온천공원 · THE FORIM</title>
   <link rel="stylesheet" href="/assets/style.css">
+  <style>
+    .container { max-width: 980px; margin: 0 auto; padding: 24px; }
+    .brandbar { margin: 10px 0 16px; }
+    .brandbar .logo { font-weight: 800; letter-spacing: 0.08em; }
+    .hero { color:#fff; background:#0b0f16; padding:22px 24px; border-radius:14px; }
+    .hero h1 { margin:0; font-size:22px; }
+    .hero .sub { margin-top:6px; opacity:.9; font-size:14px; }
+    .card { background:#fff; border-radius:18px; padding:18px 18px 14px;
+            box-shadow:0 6px 18px rgba(0,0,0,0.06); margin-top:18px; }
+    table.meta { width:100%; border-collapse:collapse; }
+    table.meta th { text-align:left; width:18%; padding:10px; color:#333; font-weight:700; }
+    table.meta td { padding:10px; color:#111; }
+    table.meta tr { border-bottom:1px solid #eee; }
+    table.meta tr:last-child { border-bottom:none; }
+    .btnrow { display:flex; gap:10px; margin-top:14px; }
+    .btn { display:inline-block; padding:10px 14px; border-radius:10px; border:1px solid #111;
+           background:#111; color:#fff; font-weight:700; text-decoration:none; cursor:pointer; }
+    .btn.secondary { background:#fff; color:#111; }
+    .hint { margin-top:10px; font-size:12px; color:#666; }
+    .section-title { margin:14px 0 6px; font-weight:800; }
+    .note { white-space:pre-wrap; color:#111; }
+  </style>
 </head>
 <body>
-  <main class="container">
-    <div class="logo-mark">THE FORIM</div>
-    <h1>온천공원</h1>
-    <p>수목코드: <strong id="code">O2-DTZT038</strong></p>
+  <div class="container">
+    <div class="brandbar"><div class="logo">THE FORIM</div></div>
 
-    <button id="goForm">현장기록 입력</button>
-  </main>
+    <div class="hero">
+      <h1>수목 상세 정보</h1>
+      <div class="sub">조사번호: O2-DTZT038 · 온천공원</div>
+    </div>
+
+    <div class="card">
+      <table class="meta">
+        <tr><th>공원명</th><td>온천공원</td><th>수목코드</th><td>O2-DTZT038</td></tr>
+        <tr><th>수종명</th><td>느티나무</td><th>성상</th><td>낙엽교목</td></tr>
+        <tr><th>규격</th><td>H3.5*R15</td><th>단위</th><td>주</td></tr>
+        <tr><th>수량(설계)</th><td>1</td><th>수량(현장)</th><td></td></tr>
+        <tr><th>관리번호</th><td>온2낙교느티38</td><th>사진ID</th><td></td></tr>
+      </table>
+
+      <div class="btnrow">
+        <button class="btn" id="goForm">현장기록 입력</button>
+        <a class="btn secondary" id="qrPng" href="/qr/O2-DTZT038.png" target="_blank" rel="noopener">QR PNG</a>
+      </div>
+
+      <div class="hint">※ 버튼을 누르면 Google Form이 열리고, 공원명/수목코드가 자동 입력됩니다.</div>
+
+      <div class="section-title">필요 관리 내용</div>
+      <div class="note"></div>
+    </div>
+  </div>
 
   <script>
-    const FORM_BASE = "https://docs.google.com/forms/d/1gGJU8_ifBXOKEjuSEzPnZjvQ_mnBpHECPtf-GlAVDYM/viewform";
+    const FORM_BASE  = "https://docs.google.com/forms/d/1gGJU8_ifBXOKEjuSEzPnZjvQ_mnBpHECPtf-GlAVDYM/viewform";
     const ENTRY_PARK = "entry.939121262";
     const ENTRY_CODE = "entry.253024248";
-    const PARK_NAME = "온천공원";
-    const CODE = "O2-DTZT038";
+    const PARK_NAME  = "온천공원";
+    const CODE       = "O2-DTZT038";
 
     document.getElementById("goForm").onclick = () => {
-      const url =
-        `${FORM_BASE}?${ENTRY_PARK}=${encodeURIComponent(PARK_NAME)}&` +
-        `${ENTRY_CODE}=${encodeURIComponent(CODE)}`;
+      const url = `${FORM_BASE}?${ENTRY_PARK}=${encodeURIComponent(PARK_NAME)}&${ENTRY_CODE}=${encodeURIComponent(CODE)}`;
       window.location.href = url;
     };
   </script>
