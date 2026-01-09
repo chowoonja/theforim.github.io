@@ -16,7 +16,7 @@
 
   <script>
     // ===== 고정값 =====
-    const FORM_BASE = "https://docs.google.com/forms/d/1gGJU8_ifBXOKEjuSEzPnZjvQ_mnBpHECPtf-GlAVDYM/viewform";
+    const  = "https://docs.google.com/forms/d/1gGJU8_ifBXOKEjuSEzPnZjvQ_mnBpHECPtf-GlAVDYM/viewform";
     const ENTRY_PARK = "entry.939121262";
     const ENTRY_CODE = "entry.253024248";
     const PARK_NAME = "온천공원";
@@ -30,7 +30,7 @@
     // ===== 폼 이동 =====
     document.getElementById("goForm").onclick = () => {
       const url =
-        `${FORM_BASE}?${ENTRY_PARK}=${encodeURIComponent(PARK_NAME)}&` +
+        `${}?${ENTRY_PARK}=${encodeURIComponent(PARK_NAME)}&` +
         `${ENTRY_CODE}=${encodeURIComponent(file)}`;
       window.location.href = url;
     };

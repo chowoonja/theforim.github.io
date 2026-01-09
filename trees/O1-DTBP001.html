@@ -5,6 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>O1-DTBP001 · 온천공원 · THE FORIM</title>
+  <!-- TEST-123 -->
   <link rel="stylesheet" href="/assets/style.css">
   <style>
     .container { max-width: 980px; margin: 0 auto; padding: 24px; }
@@ -60,16 +61,26 @@
   </div>
 
   <script>
-    const FORM_BASE  = "https://docs.google.com/forms/d/1gGJU8_ifBXOKEjuSEzPnZjvQ_mnBpHECPtf-GlAVDYM/viewform";
-    const ENTRY_PARK = "entry.939121262";
-    const ENTRY_CODE = "entry.253024248";
-    const PARK_NAME  = "온천공원";
-    const CODE       = "O1-DTBP001";
+      const   = "https://docs.google.com/forms/d/e/1FAIpQLSdgujOIV9bKAUyOAot7AoysT4UWBrrIKkQbIgWirDtZjaapQA/viewform";
+  const ENTRY_PARK = "entry.939121262";
+  const ENTRY_CODE = "entry.253024248";
+  const ENTRY_SPECIES = "entry.2104235715";
 
-    document.getElementById("goForm").onclick = () => {
-      const url = `${FORM_BASE}?${ENTRY_PARK}=${encodeURIComponent(PARK_NAME)}&${ENTRY_CODE}=${encodeURIComponent(CODE)}`;
-      window.location.href = url;
-    };
+  const PARK_NAME  = "온천공원";
+  const CODE       = "O1-DTBP001";
+  const SPECIES    = "자작나무";
+  document.getElementById("goForm").onclick = () => {
+  const url =
+     +
+    "?usp=pp_url" +
+    "&" + ENTRY_PARK + "=" + encodeURIComponent(PARK_NAME) +
+    "&" + ENTRY_CODE + "=" + encodeURIComponent(CODE) +
+    "&" + ENTRY_SPECIES + "=" + encodeURIComponent(SPECIES);
+
+  window.location.href = url;
+};
+
   </script>
+
 </body>
 </html>
