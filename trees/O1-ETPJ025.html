@@ -1,50 +1,34 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <title>O1-ETPJ025 쨌 ?뚮굹臾?議고삎) 쨌 ?⑥쿇怨듭썝 쨌 THE FORIM</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="/assets/style.css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O1-ETPJ025 · 온천공원 · THE FORIM</title>
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="logo-mark">THE FORIM</div>
-    <div class="brand-text">
-      <h1>?섎ぉ ?곸꽭 ?뺣낫</h1>
-      <p>議곗궗踰덊샇: O1-ETPJ025 쨌 ?⑥쿇怨듭썝 O1援ш컙</p>
-    </div>
-  </header>
-
   <main class="container">
-    <nav style="margin: 1rem 0 1.5rem; font-size: 0.9rem;">
-      <a href="/">硫붿씤</a>
-    </nav>
+    <div class="logo-mark">THE FORIM</div>
+    <h1>온천공원</h1>
+    <p>수목코드: <strong id="code">O1-ETPJ025</strong></p>
 
-    <section class="card">
-      <h2 style="margin: 0 0 0.75rem;">湲곕낯 ?뺣낫</h2>
-      <table class="info-table" style="width:100%; border-collapse: collapse;">
-        <tbody>
-          <tr><th>?깆긽</th><td>?곷줉援먮ぉ</td></tr>
-<tr><th>?섏쥌紐?/th><td>?뚮굹臾?議고삎)</td></tr>
-<tr><th>洹쒓꺽</th><td>H5.0*R20</td></tr>
-<tr><th>?⑥쐞</th><td>二?/td></tr>
-<tr><th>?섎웾(?ㅺ퀎)</th><td>1</td></tr>
-<tr><th>愿由щ쾲??/th><td>???곴탳?뚯“25</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="card" style="margin-top: 1rem;">
-      <h2 style="margin: 0 0 0.75rem;">?꾩옣湲곕줉 ?낅젰</h2>
-      <p style="margin: 0 0 0.75rem; opacity: 0.8;">???꾩옣湲곕줉 ?낅젰 踰꾪듉(援ш???? ?꾨줈?앺듃 ?쒖? 留곹겕濡?異뷀썑 ?곌껐?⑸땲??</p>
-      <a class="btn btn-primary" href="https://docs.google.com/forms/d/1gGJU8_ifBXOKEjuSEzPnZjvQ_mnBpHECPtf-GlAVDYM/viewform" target="_blank" rel="noopener">현장기록 입력</a>
-    </section>
-
-    <footer style="margin: 2rem 0 1rem; font-size: 0.85rem; opacity: 0.7;">
-      THE FORIM 쨌 https://theforim.com
-    </footer>
+    <button id="goForm">현장기록 입력</button>
   </main>
+
+  <script>
+    const FORM_BASE = "https://docs.google.com/forms/d/1gGJU8_ifBXOKEjuSEzPnZjvQ_mnBpHECPtf-GlAVDYM/viewform";
+    const ENTRY_PARK = "entry.939121262";
+    const ENTRY_CODE = "entry.253024248";
+    const PARK_NAME = "온천공원";
+    const CODE = "O1-ETPJ025";
+
+    document.getElementById("goForm").onclick = () => {
+      const url =
+        `${FORM_BASE}?${ENTRY_PARK}=${encodeURIComponent(PARK_NAME)}&` +
+        `${ENTRY_CODE}=${encodeURIComponent(CODE)}`;
+      window.location.href = url;
+    };
+  </script>
 </body>
 </html>
-
-
