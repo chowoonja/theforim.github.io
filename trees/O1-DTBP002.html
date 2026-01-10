@@ -60,16 +60,72 @@
   </div>
 
   <script>
-    const   = "https://docs.google.com/forms/d/1gGJU8_ifBXOKEjuSEzPnZjvQ_mnBpHECPtf-GlAVDYM/viewform";
-    const ENTRY_PARK = "entry.939121262";
-    const ENTRY_CODE = "entry.253024248";
-    const PARK_NAME  = "온천공원";
-    const CODE       = "O1-DTBP002";
+    const FORM_BASE = "https://docs.google.com/forms/d/e/1FAIpQLSdgujOIV9bKAUyOAot7AoysT4UWBrrIKkQbIgWirDtZjaapQA/viewform";
+  const ENTRY_PARK = "entry.939121262";
+  const ENTRY_CODE = "entry.253024248";
+  const ENTRY_SPECIES = "entry.2104235715";
 
-    document.getElementById("goForm").onclick = () => {
-      const url = `${}?${ENTRY_PARK}=${encodeURIComponent(PARK_NAME)}&${ENTRY_CODE}=${encodeURIComponent(CODE)}`;
+  function clean(v) {
+    return (v === null || v === undefined)
+      ? ""
+      : String(v).replace(/\s+/g, " ").trim();
+  }
+
+  function normLabel(s) {
+    return clean(s).replace(/[:：]/g, "").replace(/\s+/g, "");
+  }
+
+  function codeFromFilename() {
+    const f = (location.pathname.split("/").pop() || "").split("?")[0];
+    return clean(f).replace(/\.html$/i, "");
+  }
+
+  function getValueFromMeta(label) {
+    const table = document.querySelector("table.meta");
+    if (!table) return "";
+
+    const want = normLabel(label);
+    for (const row of table.querySelectorAll("tr")) {
+      const cells = Array.from(row.children);
+      for (let i = 0; i < cells.length; i++) {
+        const c = cells[i];
+        if (!c.tagName) continue;
+        if (c.tagName.toLowerCase() !== "th") continue;
+        if (normLabel(c.textContent) !== want) continue;
+
+        const next = cells[i + 1];
+        if (next && next.tagName && next.tagName.toLowerCase() === "td") {
+          return clean(next.textContent);
+        }
+
+        const anyTd = row.querySelector("td");
+        return anyTd ? clean(anyTd.textContent) : "";
+      }
+    }
+    return "";
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const PARK_NAME = getValueFromMeta("공원명") || "온천공원";
+    const CODE = getValueFromMeta("수목코드") || codeFromFilename();
+    const SPECIES = getValueFromMeta("수종명");
+
+    const btn = document.getElementById("goForm");
+    if (!btn) return;
+
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const url =
+        FORM_BASE +
+        "?usp=pp_url" +
+        "&" + ENTRY_PARK + "=" + encodeURIComponent(PARK_NAME) +
+        "&" + ENTRY_CODE + "=" + encodeURIComponent(CODE) +
+        "&" + ENTRY_SPECIES + "=" + encodeURIComponent(SPECIES || "");
+
       window.location.href = url;
-    };
+    });
+  });
   </script>
 </body>
 </html>
