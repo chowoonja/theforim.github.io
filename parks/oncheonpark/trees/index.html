@@ -1,31 +1,31 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Redirecting…</title>
+  <title>Redirecting??/title>
   <meta name="robots" content="noindex" />
 </head>
 <body>
 <script>
 (function () {
-  // /t/O2-DTMD004  →  code = "O2-DTMD004"
+  // /t/O2-DTMD004  ?? code = "O2-DTMD004"
   var path = location.pathname.replace(/\/+$/, "");
   var parts = path.split("/");
   var code = parts[parts.length - 1];
 
-  // /t 또는 /t/ 로 들어오면 메인으로
+  // /t ?먮뒗 /t/ 濡??ㅼ뼱?ㅻ㈃ 硫붿씤?쇰줈
   if (!code || code === "t") {
     location.replace("/");
     return;
   }
 
-  // 현재 도메인 유지 + trees로 이동
-  var target = "/trees/" + encodeURIComponent(code) + ".html";
+  // ?꾩옱 ?꾨찓???좎? + trees濡??대룞
+  var target = "/parks/oncheonpark/trees/" + encodeURIComponent(code) + ".html";
   location.replace(target);
 })();
 </script>
 
-<p>이동 중입니다…</p>
+<p>?대룞 以묒엯?덈떎??/p>
 </body>
 </html>
