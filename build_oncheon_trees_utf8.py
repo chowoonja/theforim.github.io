@@ -103,6 +103,7 @@ def html_page(code: str, tree_name: str, park_name: str) -> str:
 def build_from_xlsx(xlsx_path: Path) -> List[Tuple[str, str, str]]:
     if not xlsx_path.exists():
         return []
+
     wb = load_workbook(xlsx_path, data_only=True)
     ws = wb.active
 
@@ -110,30 +111,27 @@ def build_from_xlsx(xlsx_path: Path) -> List[Tuple[str, str, str]]:
     if not rows:
         return []
 
-    headers = [safe_text(c) for c in rows[0]]
-    code_idx, name_idx, park_idx = guess_columns(headers)
+    headers = [safe_text(c).strip() for c in rows[0]]
+
+    def must_idx(colname: str) -> int:
+        try:
+            return headers.index(colname)
+        except ValueError:
+            raise RuntimeError(f"Missing column: {colname} | headers={headers}")
+
+    code_idx = must_idx("수목코드")
+    name_idx = must_idx("수종명")
+    park_idx = must_idx("공원명")
 
     out: List[Tuple[str, str, str]] = []
+
     for r in rows[1:]:
-        if r is None:
-            continue
-        code = safe_text(r[code_idx]) if code_idx < len(r) else ""
-        if not code:
-            continue
+        code = safe_text(r[code_idx])
+        name = safe_text(r[name_idx])
+        park = safe_text(r[park_idx])
+        if code and name:
+            out.append((code, name, park))
 
-        tree_name = ""
-        if name_idx is not None and name_idx < len(r):
-            tree_name = safe_text(r[name_idx])
-        if not tree_name:
-            tree_name = "수목"
-
-        park = PARK_NAME
-        if park_idx is not None and park_idx < len(r):
-            p = safe_text(r[park_idx])
-            if p:
-                park = p
-
-        out.append((code, tree_name, park))
     return out
 
 def main():
